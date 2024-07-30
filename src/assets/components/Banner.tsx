@@ -1,14 +1,17 @@
 import { Col, Container, Row } from "react-bootstrap";
+import programmer from "../programmer.png";
 
 function Banner() {
   return (
-    <Container>
+    <Container className="banner">
       <Row>
-        <Col xs={8}>
-          <h1>Hello World!</h1>
+        <Col xs={12} lg={8} md={8}>
+          <h1>Hi There!</h1>
+          <h2>I'm Rohith Andanala</h2>
+          <a>I am a professional programmer.</a>
         </Col>
-        <Col xs={4}>
-          <a>Image</a>
+        <Col xs={12} lg={4} md={4}>
+          <img src={programmer} />
         </Col>
       </Row>
     </Container>

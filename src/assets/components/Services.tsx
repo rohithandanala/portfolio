@@ -1,15 +1,14 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { projects } from "./Projectdetails";
+import { services } from "./Servicelist";
 
-function Projects() {
+function Service() {
   return (
-    <Container>
-      <h1>Projects</h1>
+    <Container className="services">
+      <h1>What I Do</h1>
       <Row>
-        {projects.map((d) => (
+        {services.map((d) => (
           <Col className="d-flex justify-content-center">
             <Card
-              className="projectile"
               style={{
                 width: "25rem",
                 textAlign: "justify",
@@ -28,4 +27,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Service;

@@ -1,16 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 #root {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #090212;
-  color: aliceblue;
+  background-color: #00171f;
+  color: rgb(255, 255, 255);
   font-family: "Poppins";
 }
 
 .navibar {
-  background-color: aqua;
   font-weight: 500;
+}
+.navibarlink {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #fffdfd;
+}
+
+.banner {
+  margin-top: 150px;
+  text-align: left;
+}
+
+.banner h1 {
+  margin-top: 50px;
+}
+.banner img {
+  width: 100%;
+}
+
+.services {
+  margin-top: 200px;
+}
+
+.contactcontainer {
+  height: 500px;
+  margin-top: 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  position: relative;
+}
+
+.projectile {
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+  margin-top: 50px;
+}
+
+.contactcontainer img {
+  width: 30%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.mailbox {
+  height: 500px;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 25px;
+}
+.mailbox Row Col {
+  margin-top: 10px;
 }

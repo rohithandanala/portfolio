@@ -5,15 +5,21 @@ import "../../App.css";
 function Navibar() {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary navibar">
-        <Container>
+      <Navbar expand="lg" bg="dark" variant="white" fixed="top">
+        <Container className="navibar">
           <Navbar.Brand href="#home">My Portfolio</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/About">About</NavLink>
-              <NavLink to="/Contact">Contact Me</NavLink>
+              <NavLink to="/" className="navibarlink">
+                Home
+              </NavLink>
+              <NavLink to="/About" className="navibarlink">
+                About
+              </NavLink>
+              <NavLink to="/ContactMe" className="navibarlink">
+                Contact Me
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
