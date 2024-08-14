@@ -26,7 +26,13 @@ function Contact() {
                     xs={12}
                     lg={6}
                     md={6}
-                    style={{ paddingLeft: 0, paddingRight: 0 }}
+                    style={{
+                      paddingLeft: 0,
+                      paddingRight: "2px",
+                      display: "flex",
+                      justifyContent: "Right",
+                    }}
+                    className="mailinputbox"
                   >
                     <input
                       type="text"
@@ -38,7 +44,13 @@ function Contact() {
                     xs={12}
                     lg={6}
                     md={6}
-                    style={{ paddingLeft: 0, paddingRight: 0 }}
+                    style={{
+                      paddingLeft: "2px",
+                      paddingRight: 0,
+                      display: "flex",
+                      justifyContent: "left",
+                    }}
+                    className="mailinputbox"
                   >
                     <input
                       type="text"
@@ -51,6 +63,7 @@ function Contact() {
                     lg={12}
                     md={12}
                     style={{ paddingLeft: 0, paddingRight: 0 }}
+                    className="mailinputbox"
                   >
                     <input
                       type="text"
@@ -63,8 +76,13 @@ function Contact() {
                     lg={12}
                     md={12}
                     style={{ paddingLeft: 0, paddingRight: 0 }}
+                    className="mailinputbox"
                   >
-                    <textarea placeholder="Message" style={{ width: "75%" }} />
+                    <textarea
+                      placeholder="Message"
+                      style={{ width: "75%" }}
+                      rows={10}
+                    />
                   </Col>
                 </Row>
               </div>

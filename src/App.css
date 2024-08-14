@@ -59,7 +59,9 @@
   padding: 10px;
   background-color: aliceblue;
   border-radius: 25px;
+  color: black;
 }
-.mailbox Row Col {
-  margin-top: 10px;
+
+.mailinputbox {
+  padding-top: 10px;
 }
