@@ -5,7 +5,6 @@ import Skills from "./components/Skills.vue";
 import WorkExperience from "./components/WorkExperience.vue";
 import Projects from "./components/Projects.vue";
 </script>
-
 <template>
   <NavBar />
   <Projects />
