@@ -1,0 +1,138 @@
+@import "./base.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  font-family: "Montserrat", serif;
+  background-color: #0d1117;
+  color: aliceblue;
+}
+
+/* This section is for class objects*/
+.Project {
+  max-width: 800px;
+  margin: 1rem auto;
+
+  display: grid;
+  grid-auto-columns: 0.5fr 1.5fr;
+  grid-template-rows: 0.5fr 1.5fr 0.1fr;
+  grid-template-areas: "projectimg projectheading" "projectimg projectdescription" "projectimg morebutton";
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  b {
+    grid-area: projectheading;
+    padding: 0 1rem;
+  }
+  img {
+    grid-area: projectimg;
+    width: 200px;
+    margin: auto;
+  }
+  a {
+    grid-area: projectdescription;
+    padding: 0 1rem;
+  }
+  button {
+    grid-area: morebutton;
+    width: 80px;
+    float: right;
+  }
+}
+.Project > * {
+  margin: 10px;
+}
+
+.SectionHeading {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+.SectionBox {
+  margin-top: 2rem !important;
+  padding: 2rem;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  border: 1px solid white;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.line {
+  width: 2px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+.skill {
+  padding: 2rem;
+  img {
+    width: 50px;
+    margin: 15px;
+    border-radius: 2.5px;
+  }
+}
+
+/* This section is for id objects*/
+
+#skillcontainer {
+  max-width: 800px;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+#workgrid {
+  display: grid;
+  max-width: 800px;
+  margin: 0 auto;
+  grid-template-columns: 0.5fr 0.1fr 2fr;
+  grid-template-rows: 25px 1fr;
+  grid-template-areas: "workimg workdot workmatter" "workimg workline workmatter";
+}
+#workdot {
+  grid-area: workdot;
+}
+#workimg {
+  grid-area: workimg;
+  text-align: end;
+  padding-right: 5px;
+  img {
+    width: 50px;
+    border-radius: 5px;
+  }
+}
+#workmatter {
+  grid-area: workmatter;
+  padding: 2rem;
+  padding-top: 0;
+}
+#workline {
+  grid-area: workline;
+}
+#WorkExperience {
+}
+#Contact {
+  min-width: 550px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: aliceblue;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* aligns the items horizontally */
+  align-items: center; /* aligns the items vertically */
+  padding: 1rem;
+  button {
+    max-width: 200px;
+  }
+}
+#Contact > * {
+  width: 500px;
+  margin: 10px;
+  border-radius: 2px;
+}
