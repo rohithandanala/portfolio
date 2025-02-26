@@ -80,6 +80,60 @@
 
 /* This section is for id objects*/
 
+#BannerContainer {
+  display: grid;
+  width: 98vw;
+  max-width: 1200px;
+  min-width: 550px;
+  margin: 0 auto;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "bannerimg bannername";
+  img {
+    width: 200px;
+    grid-area: bannerimg;
+    margin: 0 auto;
+    border-radius: 100% 25% 75% 65%;
+    animation: move-border 5s linear infinite;
+  }
+}
+@keyframes move-border {
+  0% {
+    border-radius: 50% 75% 50% 75%;
+  }
+  25% {
+    border-radius: 25% 46% 25% 85%;
+  }
+  75% {
+    border-radius: 85% 60% 55% 75%;
+  }
+  100% {
+    border-radius: 50% 75% 50% 75%;
+  }
+}
+
+#BannerName {
+  grid-area: bannername;
+  margin: 0 auto;
+  h4 {
+    font-size: 60px;
+  }
+  a {
+    font-size: 30px;
+  }
+}
+
+#AboutMecontainer {
+  width: 80vw;
+  max-width: 1200px;
+  min-width: 550px;
+  margin: 0 auto;
+  text-align: justify;
+
+  padding-bottom: 15%;
+}
+
 #skillcontainer {
   max-width: 800px;
   min-width: 600px;
