@@ -202,6 +202,7 @@
     margin: 0 auto;
     width: 70vw;
     text-align: center;
+    height: 35vh;
   }
 }
 
@@ -220,7 +221,7 @@
     grid-template-columns: 1fr;
     grid-template-areas: "bannername" "bannerimg";
     img {
-      width: 15vw;
+      width: 100px;
       margin-top: 15px;
     }
   }
@@ -243,5 +244,6 @@
   }
   #Educationbox {
     grid-template-columns: 1fr;
+    font-size: 20px;
   }
 }

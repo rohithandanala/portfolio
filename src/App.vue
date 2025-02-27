@@ -12,10 +12,10 @@ import Education from "./components/Education.vue";
   <NavBar />
   <Banner />
   <AboutMe />
-  <Education />
   <Skills />
-  <Projects />
   <WorkExperience />
+  <Projects />
+  <Education />
   <Contact />
 </template>
 
