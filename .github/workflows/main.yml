@@ -1,25 +1,26 @@
-name: Deploy Vite Vue App to GitHub Pages
+name: Deploy Vue App to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main  # Change to your main branch
 
 permissions:
-  contents: write  # Required for deployment
+  contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set Up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
@@ -28,7 +29,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          branch: gh-pages   # Deployment branch
-          folder: dist        # Output directory from Vite
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Ensure the correct build directory is deployed
+          force_orphan: true  # Clears old files to avoid caching issues
