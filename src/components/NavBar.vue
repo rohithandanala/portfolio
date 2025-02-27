@@ -41,17 +41,17 @@ export default {
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
+        <li>
+          <button class="btn btn-outline-light my-2 my-sm-0">
+            <a
+              href="/public/ROHITHRESUMEV6.pdf"
+              download
+              style="text-decoration: none; color: white"
+              >Download Resume</a
+            >
+          </button>
+        </li>
       </ul>
-      <form class="form-inline">
-        <button class="btn btn-outline-light my-2 my-sm-0">
-          <a
-            href="/public/ROHITHRESUMEV6.pdf"
-            download
-            style="text-decoration: none; color: white"
-            >Download Resume</a
-          >
-        </button>
-      </form>
     </div>
   </nav>
 </template>
