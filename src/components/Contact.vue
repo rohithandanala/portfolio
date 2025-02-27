@@ -6,7 +6,7 @@ export default {
 
 <template>
   <form id="Contact" class="SectionBox">
-    <h4 class="SectionHeading">Contact Me</h4>
+    <h4 class="SectionHeading" style="color: black !important">Contact Me</h4>
     <div class="form-group">
       <label for="exampleFormControlInput1">Name</label>
       <input type="text" class="form-control" placeholder="John Wick" />

@@ -90,7 +90,7 @@
   min-width: 550px;
   margin: 0 auto;
   padding-top: 7%;
-  padding-bottom: 15%;
+  padding-bottom: 7%;
   grid-template-columns: 1fr 1.5fr;
   grid-template-areas: "bannerimg bannername";
   img {
@@ -147,6 +147,19 @@
   img {
     grid-area: aboutimg;
     width: 350px;
+  }
+}
+
+#Educationbox {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+
+  div {
+    background-color: #2a3648;
+    box-shadow: 3.8px 7.5px 7.5px hsla(0, 0%, 0%, 0.38);
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 2rem;
   }
 }
 
