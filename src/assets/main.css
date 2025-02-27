@@ -85,9 +85,7 @@
 
 #BannerContainer {
   display: grid;
-  width: 98vw;
-  max-width: 1200px;
-  min-width: 550px;
+
   margin: 0 auto;
   padding-top: 7%;
   padding-bottom: 7%;
@@ -131,8 +129,7 @@
 
 #AboutMecontainer {
   width: 80vw;
-  max-width: 1200px;
-  min-width: 550px;
+
   margin: 0 auto;
   text-align: justify;
   padding-bottom: 15%;
@@ -164,8 +161,7 @@
 }
 
 #skillcontainer {
-  max-width: 800px;
-  min-width: 600px;
+  width: 80vw;
   margin: 0 auto;
   background-color: #313842;
   border-radius: 5px;
@@ -200,27 +196,13 @@
 #workline {
   grid-area: workline;
 }
-#WorkExperience {
-}
-#Contact {
-  min-width: 550px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: aliceblue;
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; /* aligns the items horizontally */
-  align-items: center; /* aligns the items vertically */
-  padding: 1rem;
-  button {
-    max-width: 200px;
+
+#ContactBox {
+  div {
+    margin: 0 auto;
+    width: 70vw;
+    text-align: center;
   }
-}
-#Contact > * {
-  width: 500px;
-  margin: 10px;
-  border-radius: 2px;
 }
 
 /* This section is for bootstrap objects*/
@@ -228,4 +210,38 @@
 .progress {
   --bs-progress-height: 0.5rem !important;
   --bs-progress-font-size: 0.5rem !important;
+}
+
+/* This section is for mobile version*/
+
+@media only screen and (max-width: 600px) {
+  #BannerContainer {
+    padding-top: 25%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "bannername" "bannerimg";
+    img {
+      width: 15vw;
+      margin-top: 15px;
+    }
+  }
+  #BannerName {
+    h4 {
+      font-size: 30px;
+    }
+    a {
+      font-size: 20px;
+    }
+  }
+
+  #AboutMecontainer {
+    grid-template-columns: 1fr;
+    grid-template-areas: "aboutmatter" "aboutimg";
+    img {
+      margin: 0 auto;
+      width: 300px;
+    }
+  }
+  #Educationbox {
+    grid-template-columns: 1fr;
+  }
 }
