@@ -73,6 +73,27 @@
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
 }
+
+.certificate {
+  display: grid;
+  grid-template-columns: 0.1fr 1.9fr;
+  grid-template-areas: "cerimg cerName" "cerimg cerissue";
+  padding: 5px;
+  img {
+    width: 50px;
+    grid-area: cerimg;
+    margin: auto auto;
+    padding: 5px;
+  }
+  b {
+    grid-area: cerName;
+    padding: 5px;
+  }
+  i {
+    grid-area: cerissue;
+    padding: 5px;
+  }
+}
 .skill {
   padding: 1rem 2rem;
   img {
@@ -139,7 +160,7 @@
   grid-template-areas: "aboutmatter aboutimg";
   div {
     grid-area: aboutmatter;
-    text-align: center;
+    text-align: justify;
     padding-top: 20px;
   }
   img {
@@ -151,16 +172,21 @@
 #Educationbox {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
-
-  div {
-    background-color: #2a3648;
-    box-shadow: 3.8px 7.5px 7.5px hsla(0, 0%, 0%, 0.38);
-    border-radius: 5px;
-    padding: 2rem;
-    margin: 2rem;
-  }
 }
-
+#collegeBox {
+  background-color: #2a3648;
+  box-shadow: 3.8px 7.5px 7.5px hsla(0, 0%, 0%, 0.38);
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 2rem;
+}
+#certificationBox {
+  background-color: #2a3648;
+  box-shadow: 3.8px 7.5px 7.5px hsla(0, 0%, 0%, 0.38);
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 2rem;
+}
 #skillcontainer {
   width: 80vw;
   margin: 0 auto;
@@ -259,5 +285,12 @@
 
   #workmatter {
     font-size: 12px;
+  }
+
+  .skill {
+    font-size: 12px;
+    img {
+      width: 30px;
+    }
   }
 }
