@@ -256,4 +256,8 @@
       width: 30vw;
     }
   }
+
+  #workmatter {
+    font-size: 12px;
+  }
 }

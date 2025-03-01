@@ -39,7 +39,7 @@ export default {
         />
       </div>
       <div class="dot" id="workdot"></div>
-      <div class="line" id="workline" />
+      <div class="line" id="workline"></div>
       <div class="matter" id="workmatter">
         <h5>Full-Stack Developer</h5>
         <a>Starteryou | Newhaven, Connecticut, USA</a>
