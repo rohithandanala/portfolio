@@ -77,7 +77,7 @@
 .certificate {
   display: grid;
   grid-template-columns: 0.1fr 1.9fr;
-  grid-template-areas: "cerimg cerName" "cerimg cerissue";
+  grid-template-areas: "cerimg cerName" "cerimg cerissue" "cerimg cerbutton";
   padding: 5px;
   img {
     width: 50px;
@@ -92,6 +92,15 @@
   i {
     grid-area: cerissue;
     padding: 5px;
+  }
+  button {
+    grid-area: cerbutton;
+    width: 150px;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+    }
   }
 }
 .skill {
