@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="SectionBox">
+  <div class="SectionBox" id="ProjectBox">
     <h4 class="SectionHeading">Featured Projects</h4>
     <div class="Project">
       <img
