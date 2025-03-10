@@ -250,17 +250,17 @@
 }
 
 /* This section is for mobile version*/
-
 @media only screen and (max-width: 600px) {
   #BannerContainer {
     padding-top: 25%;
-    grid-template-columns: 1fr;
-    grid-template-areas: "bannername" "bannerimg";
+    grid-template-columns: 1fr; /* This will make both items stack in a single column */
+    grid-template-areas: "bannername" "bannerimg"; /* Ensure the elements stack properly */
     img {
-      width: 100px;
+      width: 100px; /* Adjust image size */
       margin-top: 15px;
     }
   }
+
   #BannerName {
     h4 {
       font-size: 30px;
@@ -278,13 +278,15 @@
       width: 300px;
     }
   }
+
   #Educationbox {
     grid-template-columns: 1fr;
     font-size: 20px;
   }
+
   .Project {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.1fr 0.5fr 0.1fr;
+    grid-template-rows: 1fr 0.1fr 0.5fr 0.1fr; /* Adjust rows for mobile layout */
     grid-template-areas: "projectimg" "projectheading" "projectdescription" "morebutton";
 
     img {
