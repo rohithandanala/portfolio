@@ -9,14 +9,17 @@ export default {
     <div>
       <h4 class="SectionHeading">About Me</h4>
       <a
-        >I am an AI/ML engineer, data scientist, and full-stack developer with a
-        passion for building intelligent systems and scalable applications. With
-        a master's in Data Science, I specialize in deep learning, reinforcement
-        learning, and generative models. I have hands-on experience in
-        full-stack development, CI/CD, and cloud deployment with AWS. Currently,
-        I'm developing an internal platform for my business, managing 100+
-        AI-driven projects annually. My love for space and innovation drives me
-        to push the boundaries of AI and technology.</a
+        >Innovative and self-driven Machine Learning Engineer and Full-Stack
+        Developer with expertise in designing, deploying, and operationalizing
+        AI/ML models and data pipelines. Strong foundation in deep learning, LLM
+        fine-tuning, RAG, MLOps, and cloud computing, with hands-on experience
+        in AWS and DevOps tools. Passionate about building scalable, explainable
+        AI solutions and integrating data engineering workflows for real-world,
+        regulated environments. Experienced in Agile methodologies with hands-on
+        use of JIRA for sprint planning, issue tracking, and cross-functional
+        collaboration. Committed to teaching and mentoring—making complex
+        concepts accessible and empowering learners to apply knowledge
+        creatively and confidently.</a
       >
     </div>
     <img src="/src/assets/about.png" />
