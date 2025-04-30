@@ -18,9 +18,42 @@ export default {
       <a
         >Developed a GAN which can generate hand written digit images. Developed
         using a generator followed by descriminator.</a
-      ><button type="button" class="btn">more</button>
+      ><button type="button" class="btn">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/rohithandanala/Generative-Adversarial-Network"
+          >more</a
+        >
+      </button>
     </div>
 
+    <!--project break -->
+    <div class="Project">
+      <img
+        src="https://github.com/rohithandanala/pothole-Detection/raw/main/assets/potholes.gif"
+      />
+      <b
+        >🚧 Production level Pothole Detection Application using YOLOv5 with GPU
+        enabled</b
+      >
+      <a
+        >This project leverages the YOLOv5 object detection model to identify
+        potholes in road images. It is trained on over 200 labeled images using
+        an RTX 4060 GPU, ensuring efficient processing and accurate results. The
+        system supports batch image predictions and features a Tkinter GUI for
+        easy interaction. The codebase is modular, allowing for future
+        improvements, such as MLflow integration for model tracking and AWS for
+        automated retraining pipelines. 🚀📊</a
+      ><button type="button" class="btn">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/rohithandanala/pothole-Detection/tree/main"
+          >more</a
+        >
+      </button>
+    </div>
     <!--project break -->
     <div class="Project">
       <img
@@ -32,7 +65,14 @@ export default {
         With four LSTM layers and 71,051 parameters, the model was trained on
         1275 timestamps for 100 epochs, achieving a final loss of 0.0015,
         ensuring accurate forecasts.</a
-      ><button type="button" class="btn">more</button>
+      ><button type="button" class="btn">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/rohithandanala/Google-stock-price-prediction-using-RNN"
+          >more</a
+        >
+      </button>
     </div>
     <!--project break -->
     <div class="Project">
@@ -49,7 +89,7 @@ export default {
         MySQL database and an interactive React.js frontend, showcasing
         expertise in backend development, front-end design, and AI-driven
         solutions.</a
-      ><button type="button" class="btn">more</button>
+      >
     </div>
     <!--project break -->
     <div class="Project">
@@ -68,7 +108,14 @@ export default {
         predefined word dictionaries. The final sentiment scores are aggregated
         and analyzed against overall product ratings, providing valuable
         insights into customer feedback. 🚀📊</a
-      ><button type="button" class="btn">more</button>
+      ><button type="button" class="btn">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/rohithandanala/Sentiment-Analysis-Using-Lexicon-Based-Approach"
+          >more</a
+        >
+      </button>
     </div>
     <!--project break -->
   </div>

@@ -41,6 +41,11 @@
     grid-area: morebutton;
     width: 80px;
     float: right;
+    a {
+      text-align: center;
+      text-decoration: none;
+      color: aliceblue;
+    }
   }
 }
 .Project > * {
