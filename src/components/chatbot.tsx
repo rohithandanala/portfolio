@@ -74,7 +74,7 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:3000/query', {
+      const response = await fetch('https://app.therohithandanala.in/api/query', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export default function Chatbot() {
       }
 
       const result = await response.json();
-      const botMessage: Message = { role: "model", text: result.response };
+      const botMessage: Message = { role: "model", text: result.result };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error("Chatbot error:", error);
