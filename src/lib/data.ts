@@ -49,6 +49,7 @@ export type Skill = {
   icon: React.ComponentType<{ className?: string }>;
 };
 
+
 export const skillsData: SkillCategory[] = [
     {
       name: "Cloud & MLOps",
@@ -164,6 +165,49 @@ export const skillsData: SkillCategory[] = [
           { name: "UART", icon: Share2 },
         ],
       },
+  ];
+
+  export const skillsColumns = [
+    [
+      {
+        name: "Cloud & MLOps",
+        skills: ["AWS (SageMaker, Bedrock, Lambda, S3)", "GCP Vertex AI", "Docker", "Kubernetes", "MLflow", "CI/CD Pipelines (GitHub Actions, Jenkins)"],
+      },
+      {
+        name: "Machine Learning & Deep Learning",
+        skills: ["TensorFlow, PyTorch, Scikit-learn, Keras", "CNNs, RNNs, Transfer Learning", "Feature Engineering", "Model Evaluation & Optimization"],
+      },
+      {
+        name: "Databases & Data Engineering",
+        skills: ["PostgreSQL, MySQL, MongoDB, ElasticSearch", "Pinecone (Vector DB)", "Apache Spark", "ETL Pipelines"],
+      },
+      {
+        name: "Programming & Scripting",
+        skills: ["Python, SQL, R"],
+      },
+      {
+        name: "Data Visualization & BI Tools",
+        skills: ["Tableau, Power BI", "Matplotlib, Seaborn, Plotly"],
+      },
+    ],
+    [
+      {
+        name: "Generative AI & LLMs",
+        skills: ["OpenAI GPT (3.5/4)", "Hugging Face Transformers", "LangChain, LlamaIndex", "Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "Fine-tuning & Embedding Models", "Model Deployment using APIs"],
+      },
+      {
+        name: "Natural Language Processing (NLP)",
+        skills: ["Text Classification", "Named Entity Recognition (NER)", "Sentiment Analysis, Summarization", "Conversational AI", "Document Parsing & Question Answering Systems"],
+      },
+      {
+        name: "APIs & Integrations",
+        skills: ["RESTful APIs, OpenAI API", "Hugging Face Inference API", "FastAPI, Flask", "Microservices Architecture"],
+      },
+      {
+        name: "Collaboration & Development Tools",
+        skills: ["Git, GitHub, GitLab, Jira, Confluence", "VS Code, Jupyter Notebook"],
+      },
+    ]
   ];
 
 export const projectsData = [

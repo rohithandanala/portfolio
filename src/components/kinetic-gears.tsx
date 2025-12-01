@@ -10,8 +10,12 @@ type GearProps = React.SVGProps<SVGSVGElement> & {
 
 const Gear = ({ className, mainRotation, ...props }: GearProps) => {
   const subGearRotation = mainRotation * -1.5;
+  const [accentedGear, setAccentedGear] = useState<number | null>(null);
 
-  const accentedGear = useMemo(() => Math.floor(Math.random() * 3), []);
+  useEffect(() => {
+    // Only run on the client
+    setAccentedGear(Math.floor(Math.random() * 3));
+  }, []);
 
   const getGearColor = (gearIndex: number) => {
     return accentedGear === gearIndex ? "hsl(var(--destructive))" : "hsl(var(--primary))";

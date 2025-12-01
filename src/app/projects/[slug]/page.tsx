@@ -28,7 +28,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] pt-14">
       <Header />
       <main className="flex-1">
         <article className="container py-12 md:py-24 lg:py-32">

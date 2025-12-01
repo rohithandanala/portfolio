@@ -1,13 +1,13 @@
+
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Bot, User, Loader } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { portfolioChat } from "@/ai/flows/portfolio-chat";
 
 type Message = {
   role: "user" | "model";
@@ -21,8 +21,14 @@ const quickQuestions = [
     "Tell me about the Fake News Detection project.",
 ];
 
-export default function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
+type ChatbotProps = {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+};
+
+const API_URL = "https://app.therohithandanala.in/api/query";
+
+export default function Chatbot({ isOpen, setIsOpen }: ChatbotProps) {
   const [showAskMe, setShowAskMe] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -52,30 +58,8 @@ export default function Chatbot() {
     };
   }, []);
 
-  const sendInitialGreeting = useCallback(async () => {
-    setIsLoading(true);
-    try {
-        const { answer } = await portfolioChat({ query: "hi" });
-        const botMessage: Message = { role: "model", text: answer };
-        setMessages([botMessage]);
-    } catch (error) {
-        console.error("Chatbot error:", error);
-        const errorMessage: Message = {
-            role: "model",
-            text: "Hi, I am RAG Assistant made by Rohith Andanala. Ask me anything you want to know more about Rohith.",
-        };
-        setMessages([errorMessage]);
-    } finally {
-        setIsLoading(false);
-    }
-  }, []);
-
   const toggleChat = () => {
-    const nextIsOpen = !isOpen;
-    setIsOpen(nextIsOpen);
-    if (nextIsOpen && messages.length === 0) {
-      sendInitialGreeting();
-    }
+    setIsOpen(!isOpen);
   };
 
   const handleSendMessage = async (query?: string) => {
@@ -94,19 +78,18 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://app.therohithandanala.in/api/query', {
+      const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'accept': 'application/json'
-        },
-        body: JSON.stringify({ query_text: messageText })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query_text: messageText,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('API request failed');
       }
-      
+
       const result = await response.json();
       const botMessage: Message = { role: "model", text: result.result };
       setMessages((prev) => [...prev, botMessage]);
@@ -122,6 +105,7 @@ export default function Chatbot() {
       setIsLoading(false);
     }
   };
+
 
   return (
     <>
@@ -148,7 +132,7 @@ export default function Chatbot() {
 
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-full max-w-sm h-[70vh] z-50 animate-in fade-in-0 slide-in-from-bottom-4">
-        <Card className="h-full flex flex-col shadow-2xl border-primary/50">
+        <Card className="h-full flex flex-col shadow-2xl border-primary/50 bg-background/95 backdrop-blur-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-primary font-headline text-lg">
               <Bot />
@@ -173,7 +157,7 @@ export default function Chatbot() {
                  {msg.role === "user" && <User className="h-6 w-6 text-muted-foreground shrink-0" />}
               </div>
             ))}
-            {isLoading && messages.length > 0 && (
+            {isLoading && (
               <div className="flex items-start gap-3 animate-in fade-in-0 slide-in-from-bottom-2">
                 <Bot className="h-6 w-6 text-primary shrink-0" />
                 <div className="bg-muted rounded-lg px-3 py-2">
@@ -181,14 +165,15 @@ export default function Chatbot() {
                 </div>
               </div>
             )}
-            {isLoading && messages.length === 0 && (
-                 <div className="flex justify-center items-center h-full">
-                    <Loader className="h-8 w-8 animate-spin text-primary" />
-                 </div>
+            {messages.length === 0 && !isLoading && (
+                <div className="flex flex-col justify-center items-center h-full text-center text-muted-foreground animate-in fade-in-0">
+                    <MessageSquare className="w-10 h-10 mb-2 text-primary/50" />
+                    <p>Ask me anything about Rohith!</p>
+                </div>
             )}
           </CardContent>
           <CardFooter className="pt-4 border-t border-primary/20 flex flex-col items-start gap-2">
-            {!conversationStarted && messages.length > 0 && !isLoading &&(
+            {!conversationStarted && messages.length === 0 && !isLoading &&(
                 <div className="flex flex-wrap gap-2 animate-in fade-in-0">
                     {quickQuestions.map((q) => (
                         <Badge key={q} variant="outline" className="cursor-pointer border-primary/50 text-primary hover:bg-primary/10" onClick={() => handleSendMessage(q)}>{q}</Badge>

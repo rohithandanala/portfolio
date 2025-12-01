@@ -1,3 +1,4 @@
+
 import { projectsData } from "@/lib/data";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,7 +17,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-up">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center group-data-[[data-animate=true]]:animate-fade-in-up">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-destructive">
               Projects
@@ -30,7 +31,7 @@ export default function Projects() {
           {projectsData.map((project, index) => {
             const Icon = projectIcons[project.category] || Rocket;
             return (
-              <Card key={project.title} className={`flex flex-col animate-slide-in-from-${index % 2 === 0 ? 'left' : 'right'} duration-500 border-primary/30`}>
+              <Card key={project.title} className={`flex flex-col group-data-[[data-animate=true]]:animate-slide-in-from-${index % 2 === 0 ? 'left' : 'right'} duration-500 border-primary/30`} style={{animationDelay: `${200 + (index * 100)}ms`}}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 font-headline text-xl text-primary">
                     <Icon className="w-5 h-5 text-primary" />

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,6 +35,10 @@
 
     --radius: 0.5rem;
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 @layer base {
@@ -46,13 +51,29 @@
 }
 
 @layer utilities {
-  .bg-grid-slate-900\/\[0\.04\] {
-    background-image: linear-gradient(
-        hsl(var(--foreground) / 0.04) 1px,
-        transparent 1px
+  .bg-grid-plus {
+    --grid-color: hsl(var(--foreground) / 0.03);
+    --grid-size: 20px;
+    --plus-size: 5px;
+    --plus-thickness: 1px;
+    
+    background-image: 
+      repeating-linear-gradient(
+        0deg, 
+        var(--grid-color), 
+        var(--grid-color) var(--plus-thickness), 
+        transparent var(--plus-thickness), 
+        transparent var(--grid-size)
       ),
-      linear-gradient(to right, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
+      repeating-linear-gradient(
+        90deg, 
+        var(--grid-color), 
+        var(--grid-color) var(--plus-thickness), 
+        transparent var(--plus-thickness), 
+        transparent var(--grid-size)
+      );
+    background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
+    background-position: center center;
   }
   .animate-jelly-border {
     animation: jelly-border 16s ease-in-out infinite;
