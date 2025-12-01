@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "avatar",
+      "description": "Professional avatar of an AI engineer",
+      "imageUrl": "https://firebasestudio.googleapis.com/v0/b/firebase-studio-users.appspot.com/o/imagereader%2FhJj9yv4Z81.jpg?alt=media&token=3b860368-5256-4322-83b6-121852445143",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "project-1",
+      "description": "Abstract visualization for a customer churn project",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMHZpc3VhbGl6YXRpb258ZW58MHx8fHwxNzYzMjc1MDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "project-2",
+      "description": "Abstract visualization for a fraud detection project",
+      "imageUrl": "https://images.unsplash.com/photo-1618060932014-4deda4932554?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8MTc2MzI4MjM5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cyber security"
+    },
+    {
+      "id": "project-3",
+      "description": "Abstract visualization for a predictive maintenance project",
+      "imageUrl": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwbWFjaGluZXJ5fGVufDB8fHx8MTc2MzI3MjA3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "industrial machinery"
+    },
+    {
+      "id": "solution-architecture",
+      "description": "A diagram of a solution architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1743385779347-1549dabf1320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmbG93JTIwY2hhcnR8ZW58MHx8fHwxNzYzMzAzODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "flow chart"
+    }
+  ]
+}
