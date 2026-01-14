@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export default function CaseStudies() {
   return (
     <section id="case-studies" className="bg-background">
-      <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6 py-8 md:py-16">
         <div className="flex flex-col items-center justify-center space-y-4 text-center group-data-[[data-animate=true]]:animate-fade-in-up">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-destructive">Case Studies</h2>
@@ -15,7 +15,7 @@ export default function CaseStudies() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-5xl py-12 group-data-[[data-animate=true]]:animate-fade-in-zoom" style={{animationDelay: '200ms'}}>
+        <div className="mx-auto max-w-5xl py-8 group-data-[[data-animate=true]]:animate-fade-in-zoom" style={{animationDelay: '200ms'}}>
             <Carousel 
               opts={{
                 align: "start",

@@ -10,10 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "#case-studies", label: "Case Studies" },
+  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
+  { href: "#case-studies", label: "Case Studies" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -26,8 +26,8 @@ export default function Header() {
         <div className="flex-1 flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-2">
                 <Image src="https://storage.googleapis.com/project-magnolia-build-artifacts/867f139c-29b1-4c62-b91c-7f51152a2221/668478d1-d242-45e3-85cb-44e262174c65.webp" alt="RA Logo" width={24} height={24} className="h-6 w-6" />
-                <span className="hidden font-bold sm:inline-block font-headline">
-                Rohith Andanala
+                <span className="hidden font-bold sm:inline-block font-headline text-sm">
+                Venkata Sai Rohith
                 </span>
             </Link>
         </div>
@@ -47,13 +47,7 @@ export default function Header() {
         </nav>
         
         <div className="flex-1 flex justify-end items-center gap-2">
-            <Button asChild size="sm" variant="outline" className="hidden md:flex text-green-400 border-green-400/50 hover:bg-green-400 hover:text-background dark:text-green-400 dark:border-green-400/50 dark:hover:bg-green-400 dark:hover:text-background light:text-black light:border-black light:hover:bg-black light:hover:text-white">
-                <a href="/resume.pdf" download="Rohith_Andanala_Resume.pdf">
-                    Download Résumé
-                    <Download className="ml-2 h-4 w-4"/>
-                </a>
-            </Button>
-             <Button
+            <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -62,6 +56,12 @@ export default function Header() {
                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
+            </Button>
+            <Button asChild size="sm" variant="outline" className="hidden md:flex text-green-400 border-green-400/50 hover:bg-green-400 hover:text-background dark:text-green-400 dark:border-green-400/50 dark:hover:bg-green-400 dark:hover:text-background light:text-black light:border-black light:hover:bg-black light:hover:text-white">
+                <a href="/resume.pdf" download="Rohith_Andanala_Resume.pdf">
+                    Download Résumé
+                    <Download className="ml-2 h-4 w-4"/>
+                </a>
             </Button>
         </div>
 
@@ -77,7 +77,7 @@ export default function Header() {
                 <div className="flex justify-between items-center">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                     <Image src="https://storage.googleapis.com/project-magnolia-build-artifacts/867f139c-29b1-4c62-b91c-7f51152a2221/668478d1-d242-45e3-85cb-44e262174c65.webp" alt="RA Logo" width={24} height={24} className="h-6 w-6" />
-                    <span className="font-bold font-headline">Rohith Andanala</span>
+                    <span className="font-bold font-headline">Venkata Sai Rohith</span>
                     </Link>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
@@ -113,3 +113,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

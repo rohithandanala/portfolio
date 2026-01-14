@@ -15,7 +15,7 @@ const projectIcons: { [key: string]: React.ElementType } = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-12 md:py-24 lg:py-32">
+    <section id="projects" className="py-8 md:py-16">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center group-data-[[data-animate=true]]:animate-fade-in-up">
           <div className="space-y-2">
@@ -27,7 +27,7 @@ export default function Projects() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-8 py-12 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-8 py-8 lg:grid-cols-2">
           {projectsData.map((project, index) => {
             const Icon = projectIcons[project.category] || Rocket;
             return (

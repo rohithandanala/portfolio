@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
 const impactCards = [
-  { title: "$2.3M", description: "Annual Savings (Automated Claim Intake)" },
-  { title: "92%", description: "Data Accuracy (Document Intelligence Pipelines)" },
-  { title: "3+ Years", description: "End-to-End ML & MLOps Experience" },
+  { title: "12%", description: "Risk Reduction (Portfolio Mgmt)" },
+  { title: "92%", description: "Data Accuracy (Doc Intelligence)" },
+  { title: "15%", description: "Improved Returns (Trading Algo)" },
 ];
 
 type HeroProps = {
@@ -23,7 +23,7 @@ export default function Hero({ setChatbotOpen }: HeroProps) {
   };
   
   return (
-    <section className="w-full min-h-[90vh] flex items-center justify-center bg-grid-plus px-4 py-16 md:py-0">
+    <section className="w-full min-h-[90vh] flex items-center justify-center bg-grid-plus px-4 py-8 md:py-12">
       <div className="w-[90%] md:w-[60%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-16 items-center">
           {/* Mobile Image (Visible on small screens) */}
@@ -46,10 +46,10 @@ export default function Hero({ setChatbotOpen }: HeroProps) {
 
           {/* Left Column */}
           <div className="md:col-span-3 flex flex-col justify-center space-y-4 text-center md:text-left">
-            <div className="space-y-2 pt-12">
+            <div className="space-y-2 pt-2">
               <p className="text-xs text-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>Hi, my name is</p>
               <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-destructive animate-fade-in-up" style={{ animationDelay: '0.2s' }}>Venkata Sai Rohith Andanala</h2>
-              <p className="text-sm font-semibold text-primary animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Senior Machine Learning Engineer</p>
+              <p className="text-sm font-semibold text-primary animate-fade-in-up" style={{ animationDelay: '0.3s' }}>AI/ML Engineer</p>
               <p className="max-w-[700px] text-foreground text-sm mx-auto md:mx-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 I build Production-Ready AI Systems that Drive Business Impact, specializing in Scalable Predictive Modeling, MLOps, and Generative AI solutions across Healthcare and Enterprise IT.
               </p>
@@ -80,7 +80,7 @@ export default function Hero({ setChatbotOpen }: HeroProps) {
             </div>
 
 
-            <div className="w-full pt-2 flex flex-nowrap gap-2">
+            <div className="w-full pt-2 flex flex-row gap-2">
               {impactCards.map((card, index) => (
                 <div key={index} className="animate-slide-up w-1/3" style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
                   <Card className="bg-card/80 backdrop-blur-sm border-primary/50 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 h-full">
@@ -118,3 +118,5 @@ export default function Hero({ setChatbotOpen }: HeroProps) {
     </section>
   );
 }
+
+    

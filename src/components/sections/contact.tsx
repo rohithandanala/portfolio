@@ -1,20 +1,27 @@
+
 import { socialLinks } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Phone, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "../ui/badge";
+import { CodeBlock } from "../code-block";
 
 export default function Contact() {
+  const curlCommand = `curl -X POST "https://app.therohithandanala.in/api/query" -H "Content-Type: application/json" -d '{"question": "What was Rohith’s impact at Bank of America?"}'`;
+  
   return (
     <section id="contact" className="">
-      <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6 py-8 md:py-16">
         <div className="grid gap-10 lg:grid-cols-2 animate-fade-in duration-500">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-destructive">Ready to Scale Your AI Strategy? Let's Connect.</h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
-            </p>
-            <div className="flex gap-4 pt-4">
+            <div className="space-y-2 text-muted-foreground">
+                <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> West Haven, CT</p>
+                <Link href={socialLinks.phone} className="flex items-center gap-2 hover:text-primary"><Phone className="w-4 h-4 text-primary" /> {socialLinks.phone.replace('tel:','')}</Link>
+                <Link href={socialLinks.email} className="flex items-center gap-2 hover:text-primary"><Mail className="w-4 h-4 text-primary" /> {socialLinks.email.replace('mailto:','')}</Link>
+            </div>
+             <div className="flex gap-4 pt-4">
               <Button asChild variant="outline" size="icon" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
@@ -29,29 +36,15 @@ export default function Contact() {
               </Button>
             </div>
           </div>
-          <div>
-            <Card className="border-primary/30">
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold">Phone</h3>
-                    <a href="tel:8607674975" className="text-muted-foreground hover:text-primary transition-colors">
-                      (860) 767-4975
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold">Email</h3>
-                    <a href="mailto:sairohith8157@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      sairohith8157@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="space-y-4">
+             <h3 className="text-xl font-bold font-headline text-primary">RAG Assistant API Endpoint & Test</h3>
+             <CodeBlock code={curlCommand} />
+             <Card className="border-primary/30">
+                <CardContent className="p-4">
+                    <p className="text-sm font-semibold text-primary">Response Preview:</p>
+                    <p className="text-sm text-muted-foreground mt-2">"Rohith reduced portfolio risk by 12% and improved returns by 15% using Monte Carlo simulations."</p>
+                </CardContent>
+             </Card>
           </div>
         </div>
       </div>
