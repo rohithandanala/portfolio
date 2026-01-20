@@ -58,7 +58,7 @@ export default function Header() {
                 <span className="sr-only">Toggle theme</span>
             </Button>
             <Button asChild size="sm" variant="outline" className="hidden md:flex text-green-400 border-green-400/50 hover:bg-green-400 hover:text-background dark:text-green-400 dark:border-green-400/50 dark:hover:bg-green-400 dark:hover:text-background light:text-black light:border-black light:hover:bg-black light:hover:text-white">
-                <a href="/resume.pdf" download="Rohith_Andanala_Resume.pdf">
+                <a href="https://app.therohithandanala.in/api/download-resume">
                     Download Résumé
                     <Download className="ml-2 h-4 w-4"/>
                 </a>
@@ -91,7 +91,7 @@ export default function Header() {
                     </Link>
                     ))}
                      <Button asChild size="sm" variant="outline" className="text-green-400 border-green-400/50 hover:bg-green-400 hover:text-background dark:text-green-400 dark:border-green-400/50 dark:hover:bg-green-400 dark:hover:text-background light:text-black light:border-black light:hover:bg-black light:hover:text-white">
-                        <a href="/resume.pdf" download="Rohith_Andanala_Resume.pdf">
+                        <a href="https://app.therohithandanala.in/api/download-resume">
                             Download Résumé
                             <Download className="ml-2 h-4 w-4"/>
                         </a>
@@ -113,5 +113,3 @@ export default function Header() {
     </header>
   );
 }
-
-    
