@@ -1,8 +1,8 @@
-
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Download, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon, Lock } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -19,6 +19,12 @@ const navLinks = [
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch by only rendering theme-dependent UI after mounting
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -53,9 +59,25 @@ export default function Header() {
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 className="flex"
               >
-                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                {mounted ? (
+                  <>
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  </>
+                ) : (
+                  <div className="h-[1.2rem] w-[1.2rem]" /> // Placeholder to prevent layout shift
+                )}
                 <span className="sr-only">Toggle theme</span>
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              disabled
+              className="hidden lg:flex gap-2 border-primary/30 text-muted-foreground opacity-50 cursor-not-allowed"
+            >
+              <Lock className="w-4 h-4" />
+              Download Résumé
             </Button>
         </div>
 
@@ -88,10 +110,26 @@ export default function Header() {
                         variant="outline"
                         size="sm"
                         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                        className="justify-start"
                     >
-                        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        {mounted ? (
+                          <>
+                            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                          </>
+                        ) : (
+                          <div className="h-[1.2rem] w-[1.2rem]" />
+                        )}
                         <span className="ml-2">Toggle Theme</span>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled
+                      className="justify-start opacity-50 cursor-not-allowed"
+                    >
+                      <Lock className="w-4 h-4 mr-2" />
+                      Download Résumé
                     </Button>
                 </div>
                 </SheetContent>

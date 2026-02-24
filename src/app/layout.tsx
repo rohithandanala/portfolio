@@ -1,24 +1,11 @@
-
 "use client";
 
-import React, { useState } from 'react';
-import type {Metadata} from 'next';
+import React from 'react';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import Chatbot from '@/components/chatbot';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
-import Hero from '@/components/sections/hero';
-import CaseStudies from '@/components/sections/case-studies';
-import Skills from '@/components/sections/skills';
-import Projects from '@/components/sections/projects';
-import Contact from '@/components/sections/contact';
-import Experience from '@/components/sections/experience';
-import { usePathname } from 'next/navigation';
 import { ThemeProvider } from '@/components/theme-provider';
-
 
 const fontInter = Inter({
   subsets: ['latin'],
@@ -30,16 +17,11 @@ const fontSpaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isChatbotOpen, setChatbotOpen] = useState(false);
-  const pathname = usePathname();
-  const isHomePage = pathname === '/';
-
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
        <head>
@@ -53,16 +35,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {isHomePage ? (
-              React.cloneElement(children as React.ReactElement, { setChatbotOpen })
-            ) : (
-              <>
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </>
-            )}
-            <Chatbot isOpen={isChatbotOpen} setIsOpen={setChatbotOpen} />
+            {children}
             <Toaster />
           </ThemeProvider>
       </body>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -117,89 +116,97 @@ export default function Chatbot({ isOpen, setIsOpen }: ChatbotProps) {
                 </div>
             </div>
         )}
-        <Button
-            onClick={toggleChat}
-            className="h-16 w-16 rounded-full shadow-lg relative animate-chatbot-wobble bg-destructive hover:bg-destructive/80 text-destructive-foreground"
-            size="icon"
-        >
-            <span className="relative">
-                {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
-            </span>
-            <span className="sr-only">Toggle Chat</span>
-        </Button>
+        
+        <div className="relative p-[2px] overflow-hidden rounded-full h-16 w-16 group">
+          <div className="absolute inset-[-1000%] animate-rotating-border bg-[conic-gradient(from_90deg_at_50%_50%,#7DF9FF_0%,#FF0044_50%,#7DF9FF_100%)] opacity-70 group-hover:opacity-100 transition-opacity"></div>
+          <Button
+              onClick={toggleChat}
+              className="relative h-full w-full rounded-full shadow-lg animate-chatbot-wobble bg-destructive hover:bg-destructive/80 text-destructive-foreground z-10"
+              size="icon"
+          >
+              <span className="relative">
+                  {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
+              </span>
+              <span className="sr-only">Toggle Chat</span>
+          </Button>
+        </div>
       </div>
 
 
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-full max-w-sm h-[70vh] z-50 animate-in fade-in-0 slide-in-from-bottom-4">
-        <Card className="h-full flex flex-col shadow-2xl border-primary/50 bg-background/95 backdrop-blur-sm">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-primary font-headline text-lg">
-              <Bot />
-              AI Portfolio Assistant
-            </CardTitle>
-            <CardDescription>Ask me anything about Rohith's portfolio.</CardDescription>
-          </CardHeader>
-          <CardContent ref={chatContainerRef} className="flex-grow overflow-y-auto pr-4 space-y-4">
-            {messages.map((msg, index) => (
-              <div key={index} className={cn(
-                "flex items-start gap-3 animate-in fade-in-0 slide-in-from-bottom-2",
-                msg.role === "user" ? "justify-end" : ""
-              )}>
-                {msg.role === "model" && <Bot className="h-6 w-6 text-primary shrink-0" />}
-                <div className={cn("rounded-lg px-3 py-2 text-sm max-w-xs", 
-                    msg.role === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted'
+          <div className="relative h-full p-[2px] overflow-hidden rounded-lg">
+            <div className="absolute inset-[-1000%] animate-rotating-border bg-[conic-gradient(from_90deg_at_50%_50%,#7DF9FF_0%,#FF0044_50%,#7DF9FF_100%)] opacity-70"></div>
+            <Card className="relative h-full flex flex-col shadow-2xl border-none bg-background">
+              <CardHeader className="py-3">
+                <CardTitle className="flex items-center gap-2 text-primary font-headline text-lg">
+                  <Bot />
+                  AI Portfolio Assistant
+                </CardTitle>
+                <CardDescription>Ask me anything about Rohith's portfolio.</CardDescription>
+              </CardHeader>
+              <CardContent ref={chatContainerRef} className="flex-grow overflow-y-auto pr-4 space-y-4">
+                {messages.map((msg, index) => (
+                  <div key={index} className={cn(
+                    "flex items-start gap-3 animate-in fade-in-0 slide-in-from-bottom-2",
+                    msg.role === "user" ? "justify-end" : ""
                   )}>
-                  <p className="whitespace-pre-wrap">{msg.text}</p>
-                </div>
-                 {msg.role === "user" && <User className="h-6 w-6 text-muted-foreground shrink-0" />}
-              </div>
-            ))}
-            {isLoading && (
-              <div className="flex items-start gap-3 animate-in fade-in-0 slide-in-from-bottom-2">
-                <Bot className="h-6 w-6 text-primary shrink-0" />
-                <div className="bg-muted rounded-lg px-3 py-2">
-                  <Loader className="h-5 w-5 animate-spin text-primary" />
-                </div>
-              </div>
-            )}
-            {messages.length === 0 && !isLoading && (
-                <div className="flex flex-col justify-center items-center h-full text-center text-muted-foreground animate-in fade-in-0">
-                    <MessageSquare className="w-10 h-10 mb-2 text-primary/50" />
-                    <p>Ask me anything about Rohith!</p>
-                </div>
-            )}
-          </CardContent>
-          <CardFooter className="pt-4 border-t border-primary/20 flex flex-col items-start gap-2">
-            {!conversationStarted && messages.length === 0 && !isLoading &&(
-                <div className="flex flex-wrap gap-2 animate-in fade-in-0">
-                    {quickQuestions.map((q) => (
-                        <Badge key={q} variant="outline" className="cursor-pointer border-primary/50 text-primary hover:bg-primary/10" onClick={() => handleSendMessage(q)}>{q}</Badge>
-                    ))}
-                </div>
-            )}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSendMessage();
-              }}
-              className="flex w-full items-center space-x-2 pt-2"
-            >
-              <Input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about a project..."
-                disabled={isLoading}
-              />
-              <Button type="submit" size="icon" disabled={isLoading} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Send</span>
-              </Button>
-            </form>
-          </CardFooter>
-        </Card>
+                    {msg.role === "model" && <Bot className="h-6 w-6 text-primary shrink-0" />}
+                    <div className={cn("rounded-lg px-3 py-2 text-sm max-w-xs", 
+                        msg.role === 'user'
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted'
+                      )}>
+                      <p className="whitespace-pre-wrap">{msg.text}</p>
+                    </div>
+                     {msg.role === "user" && <User className="h-6 w-6 text-muted-foreground shrink-0" />}
+                  </div>
+                ))}
+                {isLoading && (
+                  <div className="flex items-start gap-3 animate-in fade-in-0 slide-in-from-bottom-2">
+                    <Bot className="h-6 w-6 text-primary shrink-0" />
+                    <div className="bg-muted rounded-lg px-3 py-2">
+                      <Loader className="h-5 w-5 animate-spin text-primary" />
+                    </div>
+                  </div>
+                )}
+                {messages.length === 0 && !isLoading && (
+                    <div className="flex flex-col justify-center items-center h-full text-center text-muted-foreground animate-in fade-in-0">
+                        <MessageSquare className="w-10 h-10 mb-2 text-primary/50" />
+                        <p>Ask me anything about Rohith!</p>
+                    </div>
+                )}
+              </CardContent>
+              <CardFooter className="pt-4 border-t border-primary/20 flex flex-col items-start gap-2">
+                {!conversationStarted && messages.length === 0 && !isLoading &&(
+                    <div className="flex flex-wrap gap-2 animate-in fade-in-0">
+                        {quickQuestions.map((q) => (
+                            <Badge key={q} variant="outline" className="cursor-pointer border-primary/50 text-primary hover:bg-primary/10" onClick={() => handleSendMessage(q)}>{q}</Badge>
+                        ))}
+                    </div>
+                )}
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSendMessage();
+                  }}
+                  className="flex w-full items-center space-x-2 pt-2"
+                >
+                  <Input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Ask about a project..."
+                    className="bg-background/50 border-primary/30"
+                    disabled={isLoading}
+                  />
+                  <Button type="submit" size="icon" disabled={isLoading} variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                    <Send className="h-4 w-4" />
+                    <span className="sr-only">Send</span>
+                  </Button>
+                </form>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
       )}
     </>
